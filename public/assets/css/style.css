@@ -1,3 +1,38 @@
+body {
+  background: #eacda3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #d6ae7b,
+    #eacda3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #d6ae7b,
+    #eacda3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
 h1 {
-  color: coral;
+  font-size: 2rem;
+  text-align: center;
+  color: #b22222;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 0;
+}
+
+form {
+  text-align: center;
 }
