@@ -2,5 +2,7 @@
   <span class="burger p-2 pl-3 mr-3"> {{id}}. {{ burger_name }} </span>
   {{#unless devoured}}
   <button class="btn btn-success devour" data-id={{id}}>Devour It!</button>
-  {{/unless}}
+  {{/unless}} {{#if devoured}}
+  <button class="btn btn-danger digest" data-id={{id}}>Digest It!</button>
+  {{/if}}
 </li>
