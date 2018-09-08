@@ -36,3 +36,9 @@ li {
 form {
   text-align: center;
 }
+
+span.burger {
+  display: inline-block;
+  background-color: #fafafa;
+  min-width: 200px;
+}

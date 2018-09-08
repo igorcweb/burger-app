@@ -2,8 +2,16 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('', (req, res) => {
-  res.render('index');
+import burger from '../models/burger';
+
+router.get('/', (req, res) => {
+  burger.selectAll(data => {
+    const hbsObj = {
+      burgers: data
+    };
+    console.log('hbsObj:', hbsObj);
+    res.render('index', hbsObj);
+  });
 });
 
-module.exports = router;
+export default router;

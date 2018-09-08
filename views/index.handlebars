@@ -5,17 +5,9 @@
 </div>
 <div class="container d-flex flex-column flex-sm-row justify-content-center align-items-center">
   <ul class="mr-sm-4 mb-3">
-    <li>1asdfasdfasdfasdfasdfasdf</li>
-    <li>1asdfasdfasdfasdfasdfasdf</li>
-    <li>1asdfasdfasdfasdfasdfasdf</li>
-    <li>1asdfasdfasdfasdfasdfasdf</li>
-
+    {{#each burgers}} {{> burgers/burger-block }} {{/each}}
   </ul>
   <ul class="ml-sm-4">
-    <li>2asdfasasdfasdfasdfasdfad</li>
-    <li>2asdfasasdfasdfasdfasdfad</li>
-    <li>2asdfasasdfasdfasdfasdfad</li>
-    <li>2asdfasasdfasdfasdfasdfad</li>
   </ul>
 
 </div>
