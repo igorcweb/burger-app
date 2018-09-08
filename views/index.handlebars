@@ -3,11 +3,12 @@
 <div class="container">
 
 </div>
-<div class="container d-flex flex-column flex-sm-row justify-content-center align-items-center">
-  <ul class="mr-sm-4 mb-3">
-    {{#each burgers}} {{> burgers/burger-block }} {{/each}}
+<div class="list d-flex flex-column flex-md-row align-items-center justify-content-between mx-auto">
+  <ul class="mb-3">
+    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block }} {{/unless}} {{/each}}
   </ul>
-  <ul class="ml-sm-4">
+  <ul class="">
+    {{#each burgers}} {{#if devoured}} {{> burgers/burger-block }} {{/if}} {{/each}}
   </ul>
 
 </div>

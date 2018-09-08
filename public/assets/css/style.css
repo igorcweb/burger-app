@@ -10,6 +10,10 @@ body {
     #d6ae7b,
     #eacda3
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
 }
 
 img {
@@ -37,8 +41,17 @@ form {
   text-align: center;
 }
 
+.list {
+  max-width: 650px;
+}
+
 span.burger {
   display: inline-block;
   background-color: #fafafa;
   min-width: 200px;
+}
+
+.btn.devour {
+  position: relative;
+  bottom: 2px;
 }

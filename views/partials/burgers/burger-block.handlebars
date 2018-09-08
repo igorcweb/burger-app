@@ -1,4 +1,6 @@
-<li class="p-2 my-3">
+<li class="p-2 my-1">
   <span class="burger p-2 pl-3 mr-3"> {{id}}. {{ burger_name }} </span>
-  <button class="btn btn-success btn-sm devour" data-id={{id}}>Devour It!</button>
+  {{#unless devoured}}
+  <button class="btn btn-success devour" data-id={{id}}>Devour It!</button>
+  {{/unless}}
 </li>
