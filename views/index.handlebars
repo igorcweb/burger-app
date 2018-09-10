@@ -3,7 +3,7 @@
 <div class="container">
 
 </div>
-<div class="list d-flex flex-column flex-md-row align-items-center justify-content-between mx-auto">
+<div class="list d-flex flex-column flex-md-row align-items-center align-items-sm-start justify-content-between mx-auto">
   <ul class="mb-3">
     {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block }} {{/unless}} {{/each}}
   </ul>
@@ -12,10 +12,10 @@
   </ul>
 
 </div>
-<form class="mt-2">
+<form class="mt-2 insert-form">
   <div class="form-group">
     <label for="burger">Enter the burger that your heart desires:</label>
-    <textarea name="burger" id="burger" cols="35" rows="2"></textarea>
+    <input type="text" name="burger" id="burger">
   </div>
-  <button class="btn btn-success">Submit</button>
+  <button class="btn btn-success">Add da Burger</button>
 </form>

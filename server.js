@@ -7,13 +7,16 @@ import apiRoutes from './controllers/apiBurgersController';
 
 app.use(express.static('public'));
 
+//Express native body parser middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 
 app.set('view engine', 'handlebars');
 
 app.use(routes);
-app.use(apiRoutes);
+app.use('/api/burgers', apiRoutes);
 
 app.listen(PORT, () => {
   console.log('burger app is listening on port', PORT);

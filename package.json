@@ -10,7 +10,6 @@
   "author": "Igor Chernyshev",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.6.1"
