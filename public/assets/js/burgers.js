@@ -4,19 +4,24 @@ $(function() {
   $('.insert-form').on('submit', event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
-    var newBurger = {
-      burger_name: $('#burger')
-        .val()
-        .trim()
-    };
-
-    $.ajax('/api/burgers', {
-      type: 'POST',
-      data: newBurger
-    }).then(() => {
-      location.reload();
-    });
+    const burger = $('#burger')
+      .val()
+      .trim();
+    if (burger) {
+      var newBurger = {
+        burger_name: burger
+      };
+      $.ajax('/api/burgers', {
+        type: 'POST',
+        data: newBurger
+      }).then(() => {
+        location.reload();
+      });
+    } else {
+      $('label')
+        .fadeOut(100)
+        .fadeIn(100);
+    }
   });
 
   //Devour Burger
