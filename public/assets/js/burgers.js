@@ -7,14 +7,9 @@ $(function() {
     const burger = $('#burger')
       .val()
       .trim();
-    if (burger) {
-      var newBurger = {
-        burger_name: burger
-      };
-      $.ajax('/api/burgers', {
-        type: 'POST',
-        data: newBurger
-      }).then(() => {
+    if (burger && burger.match(/^[a-zA-Z0-9,.!? ]*$/)) {
+      const newBurger = { burger_name: burger };
+      $.ajax('/api/burgers', { type: 'POST', data: newBurger }).then(() => {
         location.reload();
       });
     } else {
