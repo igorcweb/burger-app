@@ -7,7 +7,7 @@ $(function() {
     const burger = $(burgerInput)
       .val()
       .trim();
-    if (burger && burger.match(/^[a-zA-Z0-9,.!\-\ ]*$/)) {
+    if (burger && burger.match(/^[a-zA-Z0-9,.!'\-\ ]*$/)) {
       const newBurger = { burger_name: burger };
       $.ajax('/api/burgers', { type: 'POST', data: newBurger }).then(() => {
         location.reload();
