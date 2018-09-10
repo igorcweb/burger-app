@@ -11,6 +11,23 @@ router.post('/', (req, res) => {
   });
 });
 
+router.put('/:id', function(req, res) {
+  const condition = 'id = ' + req.params.id;
+  console.log(req.body);
+  burger.updateOne(
+    {
+      devoured: req.body.devoured
+    },
+    condition,
+    result => {
+      if (result.changedRows === 0) {
+        return releaseEvents.status(404).end();
+      }
+      res.status(200).end();
+    }
+  );
+});
+
 router.delete('/:id', (req, res) => {
   const condition = 'id = ' + req.params.id;
   burger.deleteOne(condition, result => {

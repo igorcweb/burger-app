@@ -49,13 +49,12 @@ const orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  update: function(table, objColVals, condition, cb) {
-    var queryString = 'UPDATE ' + table;
+  updateOne: function(objColVals, condition, cb) {
+    let queryString = 'UPDATE burgers';
 
     queryString += ' SET ';
     queryString += objToSql(objColVals);
@@ -63,7 +62,7 @@ const orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }

@@ -40,8 +40,24 @@ $(function() {
     });
   });
 
+  $(document).on('click', '.devour', function(e) {
+    e.preventDefault();
+    const id = $(this).data('id');
+    const devoured = {
+      devoured: true
+    };
+    $.ajax('/api/burgers/' + id, {
+      type: 'PUT',
+      data: devoured
+    }).then(() => {
+      console.log('changed devoured', devoured);
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+
   $('.delete-cat').on('click', function(event) {
-    var id = $(this).data('id');
+    const id = $(this).data('id');
 
     // Send the DELETE request.
     $.ajax('/api/cats/' + id, {
