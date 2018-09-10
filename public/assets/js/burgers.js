@@ -1,13 +1,13 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
   //New Burger
   $('.insert-form').on('submit', event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    const burger = $('#burger')
+    const burgerInput = $('#burger');
+    const burger = $(burgerInput)
       .val()
       .trim();
-    if (burger && burger.match(/^[a-zA-Z0-9,.!? ]*$/)) {
+    if (burger && burger.match(/^[a-zA-Z0-9,.! ]*$/)) {
       const newBurger = { burger_name: burger };
       $.ajax('/api/burgers', { type: 'POST', data: newBurger }).then(() => {
         location.reload();
@@ -16,6 +16,7 @@ $(function() {
       $('label')
         .fadeOut(100)
         .fadeIn(100);
+      burgerInput.val('');
     }
   });
 
