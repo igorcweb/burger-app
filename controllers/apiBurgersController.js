@@ -5,7 +5,6 @@ const router = express.Router();
 import burger from '../models/burger';
 
 router.post('/', (req, res) => {
-  console.log(req.body.burger_name);
   burger.insertOne(req.body.burger_name, result => {
     res.json({ id: result.insertId });
   });
@@ -13,7 +12,6 @@ router.post('/', (req, res) => {
 
 router.put('/:id', function(req, res) {
   const condition = 'id = ' + req.params.id;
-  console.log(req.body);
   burger.updateOne(
     {
       devoured: req.body.devoured
@@ -33,9 +31,8 @@ router.delete('/:id', (req, res) => {
   burger.deleteOne(condition, result => {
     if (result.affectedRows === 0) {
       return res.status(404).end();
-    } else {
-      res.status(200).end;
     }
+    res.status(200).end();
   });
 });
 

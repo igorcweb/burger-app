@@ -1,13 +1,5 @@
 import connection from './connection';
 
-function printQuestionMarks(num) {
-  const arr = [];
-  for (let i = 0; i < num; i++) {
-    arr.push('?');
-  }
-  return arr.toString();
-}
-
 function objToSql(ob) {
   const arr = [];
 
@@ -44,7 +36,6 @@ const orm = {
   insertOne: function(vals, cb) {
     let queryString = 'INSERT INTO burgers (burger_name) VALUES ';
     queryString += '("' + vals + '")';
-    console.log(queryString);
     connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
@@ -52,7 +43,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+
   updateOne: function(objColVals, condition, cb) {
     let queryString = 'UPDATE burgers';
 
@@ -60,8 +51,6 @@ const orm = {
     queryString += objToSql(objColVals);
     queryString += ' WHERE ';
     queryString += condition;
-
-    console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -70,8 +59,8 @@ const orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
-    var queryString = 'DELETE FROM ' + table;
+  deleteOne: function(condition, cb) {
+    let queryString = 'DELETE FROM burgers';
     queryString += ' WHERE ';
     queryString += condition;
 
@@ -79,7 +68,6 @@ const orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   }

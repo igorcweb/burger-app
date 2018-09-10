@@ -5,7 +5,7 @@
 </div>
 <div class="list d-flex flex-column flex-md-row align-items-center align-items-sm-start justify-content-between mx-auto">
   <ul class="mb-3">
-    {{#each burgers}} {{#unless devoured}} {{> burgers/burger-block }} {{/unless}} {{/each}}
+    {{#each burgers as | burger_name index |}} {{#unless devoured}} {{> burgers/burger-block }} {{/unless}} {{/each}}
   </ul>
   <ul class="">
     {{#each burgers}} {{#if devoured}} {{> burgers/burger-block }} {{/if}} {{/each}}
@@ -14,7 +14,7 @@
 </div>
 <form class="mt-2 insert-form">
   <div class="form-group">
-    <label for="burger">Enter the burger that your heart desires:</label>
+    <label for="burger"> Enter the burger that your heart desires:</label>
     <input type="text" name="burger" id="burger">
   </div>
   <button class="btn btn-success">Add da Burger</button>
