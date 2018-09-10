@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server --exec babel-node --presets env",
-    "watch": "nodemon server --exec babel-node --presets env"
+    "start": "nodemon server --exec babel-node --presets env"
   },
   "author": "Igor Chernyshev",
   "license": "ISC",
