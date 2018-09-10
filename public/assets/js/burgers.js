@@ -1,7 +1,6 @@
 $(function() {
   //New Burger
   $('.insert-form').on('submit', event => {
-    // Make sure to preventDefault on a submit event.
     event.preventDefault();
     const burgerInput = $('#burger');
     const burger = $(burgerInput)

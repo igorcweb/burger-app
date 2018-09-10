@@ -46,7 +46,6 @@ const orm = {
 
   updateOne: function(objColVals, condition, cb) {
     let queryString = 'UPDATE burgers';
-
     queryString += ' SET ';
     queryString += objToSql(objColVals);
     queryString += ' WHERE ';
@@ -71,20 +70,6 @@ const orm = {
       cb(result);
     });
   }
-
-  // insertOne: function() {},
-  // updateOne: function() {},
-  // deleteOne: function(table, condition, cb) {
-  //   let queryString = 'DELETE FROM ' + table;
-  //   queryString += ' WHERE ';
-  //   queryString += condition;
-  //   connection.query(queryString, (err, result) => {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // }
 };
 
 export default orm;
